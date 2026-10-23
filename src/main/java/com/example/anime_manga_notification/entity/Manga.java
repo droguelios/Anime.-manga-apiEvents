@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 public class Manga {
     @Id
-    @GeneratedValue( strategy = GenerationType.IDENTITY )
+    @GeneratedValue( strategy = GenerationType.SEQUENCE )
     private long id;
 
     @Column(name = "MangaName" , nullable = false)
