@@ -36,7 +36,7 @@ public class Anime {
     private LocalDateTime releaseDate;
     @Column(name = "last_episode_release_date")
     private LocalDateTime lastEpisodeReleaseDate;
-    @Column(name = "created_at" , nullable = false , updatable = false)
+    @Column(name = "created_at" , nullable = false )
     private LocalDateTime createdAt;
 
     @Column(name = "updatedAt" , nullable = false , updatable = false)

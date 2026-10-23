@@ -1,6 +1,6 @@
 package com.example.anime_manga_notification.entity;
 
-import com.example.anime_manga_notification.enums.Rol;
+import com.example.anime_manga_notification.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,26 +12,24 @@ import lombok.Setter;
 @Getter 
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue ( strategy = GenerationType.SEQUENCE )
-    private long id;
+    private Long id;
 
     @Column(name = "userName" , nullable = false)
     private String userName;
 
-    @Column(name = "email" , nullable = false)
+    @Column(name = "email" , nullable = false , unique = true)
     private String email;
 
     @Column(name = "password" ,nullable = false)
     private String password;
 
-    @Column(name = "rol")
-    private Rol rol;
-
-
-
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;
 
 }

@@ -1,6 +1,7 @@
 package com.example.anime_manga_notification.enums;
 
-public enum Rol {
+public enum Role {
+    MODERATOR,
     ADMIN,
-    USER
+    USER;
 }
