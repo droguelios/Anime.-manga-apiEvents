@@ -1,9 +1,12 @@
 package com.example.anime_manga_notification.entity;
 
+import com.example.anime_manga_notification.enums.StatusAnime;
+import com.example.anime_manga_notification.enums.StatusManga;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.mapping.Set;
 
 import java.time.LocalDateTime;
 
@@ -15,10 +18,10 @@ import java.time.LocalDateTime;
 public class Manga {
     @Id
     @GeneratedValue( strategy = GenerationType.SEQUENCE )
-    private long id;
+    private Long id;
 
-    @Column(name = "MangaName" , nullable = false)
-    private String MangaName;
+    @Column(name = "mangaName" , nullable = false)
+    private String mangaName;
 
     @Column(name = "author" , nullable = false)
     private String author;
@@ -27,15 +30,18 @@ public class Manga {
     private String description;
 
     @Column(name = "chapters")
-    private String chapters;
+    private Integer chapters;
 
-    @Column(name = "status")
-    private String status = "ONGOING";
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status" , nullable = false)
+    private StatusManga status;
 
     @Column(name = "created_at" , nullable = false , updatable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "updateAT" , nullable = false, updatable = false)
     private LocalDateTime updatedAt;
+
+
 
 }
