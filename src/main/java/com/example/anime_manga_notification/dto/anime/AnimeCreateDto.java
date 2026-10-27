@@ -17,6 +17,8 @@ public record AnimeCreateDto(
         String description,
         @NotBlank(message = "Status is required")
         StatusAnime status,
+        @NotBlank(message = "Studio is required")
+        String studio,
         @NotNull(message = "Release date is required")
         LocalDateTime releaseDate,
         @NotNull(message = "Last episode release date is required")

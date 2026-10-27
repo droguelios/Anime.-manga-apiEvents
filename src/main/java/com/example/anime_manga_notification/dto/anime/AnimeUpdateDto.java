@@ -6,6 +6,7 @@ public record AnimeUpdateDto(
         String animeName,
         String category ,
         String description,
+        String studio,
         String status
 ) {
 }

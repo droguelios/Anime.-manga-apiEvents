@@ -9,6 +9,7 @@ public record AnimeResponseDto(
         String animeName,
         String category,
         String description,
+        String studio,
         StatusAnime status,
         LocalDateTime releaseDate,
         LocalDateTime lastEpisodeReleaseDate,

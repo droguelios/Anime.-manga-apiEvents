@@ -14,5 +14,5 @@ public interface AnimeRepository extends JpaRepository<Anime, Long> {
     boolean existsByAnimeName(String animeName);
 
     List<Anime> findByStatus(StatusAnime status);
-    Optional<Anime> findByAnimeName(String animeName);
+    Optional<Anime> findById(Long id);
 }
